@@ -4,13 +4,14 @@ import './Header.css';
 import header from '../../images/header.png';
 import logo from '../../images/icons/logo.png';
 
+
 const Header = () => {
     return (
         <div style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(${header})` }} className="header">
             <nav className="nav">
                 <ul>
                     <li>
-                        <img className="logo" src={logo} alt=""/>
+                        <img className="logo" src={logo} alt="" />
                     </li>
                     <li>
                         <Link to="/home">Home</Link>
@@ -25,7 +26,7 @@ const Header = () => {
             </nav>
             <div className="title-container">
                 <h1>Burj Al Arab</h1>
-                <h2>A global icon of Arabian luxury</h2>
+                <h2>A Global Icon of Arabian Luxury</h2>
             </div>
         </div>
     );

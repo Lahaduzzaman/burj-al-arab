@@ -15,13 +15,14 @@ import WcIcon from '@material-ui/icons/Wc';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 import { useHistory } from 'react-router-dom';
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
   },
   media: {
     height: 0,
-    paddingTop: '56.25%', // 16:9
+    paddingTop: '56%', // 16:9
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -38,12 +39,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Room({room}){
+export default function Room({ room }) {
   const classes = useStyles();
   const history = useHistory()
-    const handleBook = (bedType) => {
-        history.push(`/book/${bedType}`);
-    }
+  const handleBook = (bedType) => {
+    history.push(`/book/${bedType}`);
+  }
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -60,7 +61,7 @@ export default function Room({room}){
         image={room.imgUrl}
         title="Paella dish"
       />
-      <img src={`/images/${room.bedType}.png`} alt=""/>
+      <img src={`/images/${room.bedType}.png`} alt="" />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {room.description}
@@ -68,16 +69,16 @@ export default function Room({room}){
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <LocalHotelIcon />: {room.bed} 
+          <LocalHotelIcon />: {room.bed}
         </IconButton>
         <IconButton aria-label="share">
-          <WcIcon />: {room.capacity} 
+          <WcIcon />: {room.capacity}
         </IconButton>
         <IconButton aria-label="price">
-          <AttachMoneyIcon />: {room.price} 
+          <AttachMoneyIcon />: {room.price}
         </IconButton>
-        <Button onClick={() => handleBook(room.bedType)} variant="contained" color="primary">
-            Book
+        <Button onClick={() => handleBook(room.bedType)} variant="contained" color="secondary">
+          Booking Now
         </Button>
       </CardActions>
     </Card>
